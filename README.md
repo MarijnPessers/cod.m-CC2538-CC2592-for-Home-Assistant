@@ -1,3 +1,5 @@
+[[_TOC_]]
+
 # How to set up cod.m CC2538 + CC2592 Raspberry Pi Module for Home Assistant
 
 Biggest hurdle: Accessing Raspberry UART when running Hassio
@@ -5,6 +7,27 @@ Biggest hurdle: Accessing Raspberry UART when running Hassio
 I wrote this as a comprehensive guide to install the cod.m CC2538 + CC2592 Raspberry Pi Funcmodul v0.3.
 It required some info that I was able to gather from the internet in several places. It was written in Januari 2021. Things might have changed since then.
 I am using windows to set this all up.
+
+## Preparation
+
+To make this work I needed these items
+1. Raspberry Pi with MicroSD card with Home Assistant installed.
+2. cod.m CC2538 + CC2592 Raspberry Pi Module v 0.3
+3. USB-stick (altervatively a Micro-SD to SD card converter)
+4. An antenna that has a u.FL connector.
+	- I myself had an antenna lying around that was SMA male. So I bought a u.FL-female to SMA-female antenna conver.
+	- Exxample: [Bits and Parts](https://www.bitsandparts.nl/Verloopkabeltje-uFL-IPX-IPEX-female-naar-SMA-female-p111829). I had it in my mail the day after it was processed.
+
+## Alternative method
+
+First off, this is the fastest, easiest method. I did not try this method, but instead of getting SSH access to your system this is also a possibility I was told:
+
+1. Shut down your Raspberry Pi.
+2. Take out the SSD card and place it in your pc.
+3. Navigate to the correct folder (presumably `mnt/boot/config.txt`).
+4. Edit the file as described in [Editing the config.txt file](## Editing the config.txt file). You won't have to use VI.
+5. Place the Sd card back into the Raspberry Pi.
+6. Follow the guide from there.
 
 ## Getting an SSH Key
 
@@ -72,13 +95,15 @@ After you have logged in...
 6. You also need to disable hciuart. However it was not set up. You can check this by running `systemctl status hciuart`
 	- If it iss found disable it `systemctl disable hciuart`
 
-## Adding it to Home Assistant
+## Adding the module to Home Assistant
 
 ### Hardware
 
-1. Turn off the Raspberry pi
-2. Connect the module in the correct way.
-3. Power up
+1. Turn off the Raspberry pi.
+2. Press the u.FL antenna onto the module. Make sure you place it on the u.FL straight and apply slight pressure. It will click on there.
+3. Connect the module in the correct way (which is on the Raspberry Pi on the other side than the USB connectors are; hovering over the rapberry pi; not the other way).
+4. The Raspberri Pi and the module will not fit in any Raspberri Case. If you want to fit it make sure you get one with a bit of spave on the top. I strapped the antenna to the case with a tie-wrap so that if you or your pet accidentally trips over the cable you don't destroy your hardware.
+5. Power up.
 
 ### Software
 
@@ -106,3 +131,11 @@ After you have logged in...
 	- https://www.raspberrypi.org/documentation/configuration/uart.md
 5. Adding the device to Home Assistant
 	- https://www.home-assistant.io/integrations/zha
+	
+## Versions:
+- 0.2 (2021-01-20)
+	- Added the preparation part.
+	- Added antenna connection to [Hardware](## Hardware)
+	- Added the Alternative version of putting the Micro SD card in the PC to edit.
+- 0.1 (2021-01-17) 
+	-Initial version 
