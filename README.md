@@ -1,7 +1,5 @@
 # How to set up cod.m CC2538 + CC2592 Raspberry Pi Module for Home Assistant
 
-[__TOC__]
-
 Biggest hurdle: Accessing Raspberry UART when running Hassio
 
 I wrote this as a comprehensive guide to install the cod.m CC2538 + CC2592 Raspberry Pi Funcmodul v0.3.
