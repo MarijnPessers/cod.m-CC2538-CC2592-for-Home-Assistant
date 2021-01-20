@@ -1,4 +1,4 @@
-[[_TOC_]]
+[[__TOC__]]
 
 # How to set up cod.m CC2538 + CC2592 Raspberry Pi Module for Home Assistant
 
