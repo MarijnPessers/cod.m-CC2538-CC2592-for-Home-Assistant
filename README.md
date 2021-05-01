@@ -1,5 +1,7 @@
 # How to set up [cod.m CC2538 + CC2592 Raspberry Pi Module](https://shop.codm.de/automation/zigbee/29/zigbee-cc2538-raspberry-pi-modul) for Home Assistant
 
+It should also work for the [CC2652 + CC2592 Raspberry Pi Module](https://shop.codm.de/automation/zigbee/33/zigbee-cc2652p2-raspberry-pi-module?c=5) for Home Assistant
+
 Biggest hurdle: Accessing Raspberry UART when running Hassio
 
 I wrote this as a comprehensive guide to install the cod.m CC2538 + CC2592 Raspberry Pi Funcmodul v0.3.
